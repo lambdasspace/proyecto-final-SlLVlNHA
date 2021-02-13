@@ -1,0 +1,73 @@
+FACULTAD DE CIENCIAS, UNAM
+
+PROYECTO   : Implementación de una Red Neuronal en HASKELL
+ASIGNATURA : Programación Declarativa 2020-1
+AUTOR      : Silvia Díaz Gómez
+VERSIÓN    : 1.0 
+
+
+OBJETIVO
+
+   Implementar una red neuronal en HASKELL que haga la clasificación de jugadas de poker.
+
+
+PRIMEROS PASOS
+
+   Se necesitara descargar los datos de entrenamiento y de prueba en el siguiente link:
+
+    https://archive.ics.uci.edu/ml/machine-learning-databases/poker/
+   
+      + poker-hand-testing.data
+
+      + poker-hand-training-true.data
+
+   Se necesitara el archivo con el código fuente:
+     
+     + Funciones.hs
+
+
+AMBIENTE DE DESARROLLO
+
+   + SO Debian (WSL - Windows Subsystem Linux)
+
+   + Compilador GHCi, version 8.4.4 
+
+   + HASKELL 
+
+
+EJECUCIÓN
+
+   Antes de ejecutarse todos los archivos requeridos deberan estar contenidos en el mismo directorio,
+   y por medio de una terminal nos colocaremos dentro de dicho directorio.
+
+   1. Compilaremos el archivo Funciones.hs ejecutando la siguiente linea :
+
+      > ghci Funciones.hs
+
+   2. Ejecutamos la función 'training inicio fin w1 w0' en donde :
+
+         + 'inicio', siempre será 0 
+
+         + 'fin', es el número de repeticiones o ciclos
+
+         + 'w1', es la matriz de pesos de la capa oculta
+
+         + 'w0', es la matriz de pesos de la capa incial
+     
+     Para obtener las matrices de peso se ejecutara la función 'aleatorio x y z', en donde : 
+
+        + 'x', el número de neuronas de entrada incluyendo el sesgo
+
+        + 'y', el número de neuronas de salida
+
+        + 'z', el número (semilla) necesario para el generador de número aleatorios
+
+    Por ejemplo, si queremos hacer un entrenamiento de 30 ciclos con 10 neuronas en la capa incial 
+    y 40 en la capa oculta y 10 neuronas de salida, ejecutamos lo siguiente:
+
+       > training 0 30 (aleatorio 11 40 1) (aleatorio 41 10 15)
+
+
+   3. Para obtener el porcentaje de predicción ejecutamos :
+
+      > predict
